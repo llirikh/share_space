@@ -49,4 +49,4 @@ flutter run
 
 ## Announcement
 
-Now SharedSpace already relased [v1.0.0](https://github.com/llirikh/share_space/releases/download/v1.0.0/app-release.apk)
+Now ShareSpace already released [v1.0.0](https://github.com/llirikh/share_space/releases/download/v1.0.0/app-release.apk)
