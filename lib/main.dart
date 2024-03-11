@@ -26,9 +26,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp.router(
       title: 'Flutter Demo',
       theme: Provider.of<ThemeProvider>(context).themeData,
+      debugShowCheckedModeBanner: false,
       //darkTheme: darkMode,
       routerConfig: _router.config(),
     );
   }
 }
-

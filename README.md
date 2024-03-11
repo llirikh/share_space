@@ -1,16 +1,52 @@
-# news
+# Share<span style="color:red">Space</span>
 
-A new Flutter project.
+## Introduction
 
-## Getting Started
+ShareSpace is a free and open-source news application that provides users with the latest news and articles related to space exploration. The app allows users to access a wide range of information on topics like space missions, space agencies and space technology.
 
-This project is a starting point for a Flutter application.
+## App Interface
 
-A few resources to get you started if this is your first Flutter project:
+<img src="release/screenshots/common/common.png" width="auto" height="auto">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Whats inside
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [x] Main page with articles list
+  - [x] Scrollable
+  - [x] Pagination 
+  - [x] Cached images
+- [x] Article page with article information
+  - [x] Scrollable
+  - [x] Web-view mode
+- [x] Settings page
+  - [x] Dark-mode switcher
+- [x] TabBar 
+
+## Installation
+
+**Step 1:**
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/llirikh/share_space.git
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies:
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+
+You can run this project by using this command
+
+```
+flutter run
+```
+
+## Announcement
+
+Now SharedSpace already relased [v1.0.0](https://github.com/llirikh/share_space/releases/download/v1.0.0/app-release.apk)
