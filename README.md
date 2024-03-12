@@ -1,4 +1,4 @@
-# Share$${\color{red}Space}$$
+# Share<span style="color:red">Space</span>
 
 ## Introduction
 
