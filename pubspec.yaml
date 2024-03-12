@@ -41,6 +41,7 @@ dependencies:
   url_launcher: ^6.2.5
   flutter_inappwebview: ^6.0.0
   timeago: ^3.6.1
+  shared_preferences: ^2.2.2
   provider:
 
 dev_dependencies:
