@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    ArticleListRoute.name: (routeData) {
+      final args = routeData.argsAs<ArticleListRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ArticleListScreen(
+          key: args.key,
+          controller: args.controller,
+        ),
+      );
+    },
     ArticleNavigationRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -37,12 +47,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
-    SearchRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SearchScreen(),
-      );
-    },
     SettingsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -50,6 +54,44 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [ArticleListScreen]
+class ArticleListRoute extends PageRouteInfo<ArticleListRouteArgs> {
+  ArticleListRoute({
+    Key? key,
+    required ScrollController controller,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ArticleListRoute.name,
+          args: ArticleListRouteArgs(
+            key: key,
+            controller: controller,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ArticleListRoute';
+
+  static const PageInfo<ArticleListRouteArgs> page =
+      PageInfo<ArticleListRouteArgs>(name);
+}
+
+class ArticleListRouteArgs {
+  const ArticleListRouteArgs({
+    this.key,
+    required this.controller,
+  });
+
+  final Key? key;
+
+  final ScrollController controller;
+
+  @override
+  String toString() {
+    return 'ArticleListRouteArgs{key: $key, controller: $controller}';
+  }
 }
 
 /// generated route for
@@ -114,20 +156,6 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SearchScreen]
-class SearchRoute extends PageRouteInfo<void> {
-  const SearchRoute({List<PageRouteInfo>? children})
-      : super(
-          SearchRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SearchRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

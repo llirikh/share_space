@@ -5,20 +5,22 @@ import 'package:news/features/articles_list/view/widgets/article_list_card.dart'
 import '../../../../api/api.dart';
 
 @RoutePage()
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({
+class ArticleListScreen extends StatefulWidget {
+  const ArticleListScreen({
     super.key,
+    required this.controller,
   });
 
+  final ScrollController controller;
+
   @override
-  State<SearchScreen> createState() => _SearchScreenState();
+  State<ArticleListScreen> createState() => _ArticleListScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _ArticleListScreenState extends State<ArticleListScreen> {
   late News _news;
   bool _isFirstLoading = true;
   bool _loading = true;
-  late ScrollController _controller;
 
   @override
   void initState() {
@@ -27,16 +29,25 @@ class _SearchScreenState extends State<SearchScreen> {
     super.initState();
     _news = News();
     _getNews();
-    _controller = ScrollController()..addListener(_getNews);
+    widget.controller.addListener(_getNews);
   }
 
   @override
   void dispose() {
-    _controller.removeListener(_getNews);
+    widget.controller.removeListener(_getNews);
     super.dispose();
   }
 
-  _getNews() async {
+  void scrollToBegin() {
+    widget.controller.animateTo(
+        widget.controller.position.minScrollExtent,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut
+    );
+  }
+
+
+  Future<void> _getNews() async {
     if (_isFirstLoading) {
       await _news.getNewsBatch();
       setState(() {
@@ -44,7 +55,7 @@ class _SearchScreenState extends State<SearchScreen> {
         _isFirstLoading = false;
       });
     } else {
-      if (!_loading && _controller.position.pixels >= _controller.position.maxScrollExtent) {
+      if (!_loading && widget.controller.position.pixels >= widget.controller.position.maxScrollExtent) {
         setState(() {
           _loading = true;
         });
@@ -63,7 +74,7 @@ class _SearchScreenState extends State<SearchScreen> {
     final theme = Theme.of(context);
 
     return CustomScrollView(
-      controller: _controller,
+      controller: widget.controller,
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(

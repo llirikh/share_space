@@ -20,6 +20,7 @@ ShareSpace is a free and open-source news application that provides users with t
 - [x] Settings page
   - [x] Dark-mode switcher
 - [x] TabBar 
+  - [x] Autoscroll to the top when clicked again 
 
 ## Installation
 

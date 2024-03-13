@@ -23,7 +23,7 @@ class AppRouter extends _$AppRouter {
                 children: [
                   AutoRoute(
                     initial: true,
-                    page: SearchRoute.page,
+                    page: ArticleListRoute.page,
                     path: 'search',
                   ),
                   AutoRoute(
