@@ -42,6 +42,14 @@ flutter pub get
 
 **Step 3:**
 
+Generate necessary code with such command:
+
+```
+dart run build_runner build 
+```
+
+**Step 4:**
+
 You can run this project by using this command
 
 ```
@@ -50,4 +58,4 @@ flutter run
 
 ## Announcement
 
-Now ShareSpace already released [v1.0.0](https://github.com/llirikh/share_space/releases/download/v1.0.0/app-release.apk)
+Now ShareSpace already released [v1.0.1](https://github.com/llirikh/share_space/releases/download/v1.0.1/app-release.apk)
