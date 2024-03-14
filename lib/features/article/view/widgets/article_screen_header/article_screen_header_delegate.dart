@@ -27,8 +27,7 @@ class ArticleScreenHeaderDelegate extends SliverPersistentHeaderDelegate {
 
     const animationDuration = Duration(milliseconds: 200);
     final showNewsSiteDate = shrinkOffset < 200;
-    final calcForTitleAnimation =
-        (maxExtent - shrinkOffset - topPadding - 56 - 100) / 100;
+    final calcForTitleAnimation = (maxExtent - shrinkOffset - topPadding - 56 - 100) / 100;
     final titleAnimationValue = calcForTitleAnimation > 1.0
         ? 1.0 : calcForTitleAnimation < 0.0
         ? 0.0 : calcForTitleAnimation;
@@ -41,11 +40,11 @@ class ArticleScreenHeaderDelegate extends SliverPersistentHeaderDelegate {
           fit: BoxFit.cover,
           placeholder: (context, url) {
             return Container(
-                color: theme.hintColor.withOpacity(0.1));
+              color: theme.hintColor.withOpacity(0.1));
           },
           errorWidget: (BuildContext context, String error,  url) {
             return Container(
-                color: theme.hintColor.withOpacity(0.1));
+              color: theme.hintColor.withOpacity(0.1));
           },
         ),
         Positioned(
@@ -53,7 +52,7 @@ class ArticleScreenHeaderDelegate extends SliverPersistentHeaderDelegate {
             left: 0,
             child: BackButton(
               onPressed: () {
-                AutoRouter.of(context).pop();
+                AutoRouter.of(context).maybePop();
               },
               color: Colors.white.withOpacity(0.8),
             )
@@ -62,18 +61,18 @@ class ArticleScreenHeaderDelegate extends SliverPersistentHeaderDelegate {
           bottom: 0,
           child: Container(
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    stops: const [
-                      0.01,
-                      1.0
-                    ],
-                    colors: [
-                      Colors.black.withOpacity(1),
-                      Colors.transparent
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter
-                )
+              gradient: LinearGradient(
+                stops: const [
+                  0.01,
+                  1.0
+                ],
+                colors: [
+                  Colors.black.withOpacity(1),
+                  Colors.transparent
+                ],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter
+              )
             ),
             child: AnimatedOpacity(
               opacity: titleAnimationValue,
@@ -91,9 +90,9 @@ class ArticleScreenHeaderDelegate extends SliverPersistentHeaderDelegate {
                       duration: animationDuration,
                       child: showNewsSiteDate ? Chip(
                         side: const BorderSide(
-                            width: 0,
-                            color: Colors.transparent,
-                            style: BorderStyle.none
+                          width: 0,
+                          color: Colors.transparent,
+                          style: BorderStyle.none
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16)
