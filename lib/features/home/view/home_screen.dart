@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var distance = ((_controllerArticleListScreen.position.pixels - _controllerArticleListScreen.position.minScrollExtent) / 10).round();
     _controllerArticleListScreen.animateTo(
         _controllerArticleListScreen.position.minScrollExtent,
-        duration: Duration(milliseconds: max(distance, 600)),
+        duration: Duration(milliseconds: min(distance, 600)),
         curve: Curves.easeInOut
     );
   }
