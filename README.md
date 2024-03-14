@@ -6,7 +6,7 @@ ShareSpace is a free and open-source news application that provides users with t
 
 ## App Interface
 
-<img src="release/screenshots/common/common.png" width="auto" height="auto">
+<img src="release/screenshots/common/common.png" width="auto" height="auto" alt="App interface">
 
 ## Whats inside
 
