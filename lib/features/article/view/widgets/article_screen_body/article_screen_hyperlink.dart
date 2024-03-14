@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ArticleScreenHyperlink extends StatelessWidget {
-  final String content;
+  final String text;
   final String url;
   final TextStyle? textStyle;
 
   const ArticleScreenHyperlink({
     super.key,
-    required this.content,
+    required this.text,
     required this.url,
     required this.textStyle
   });
@@ -19,7 +19,7 @@ class ArticleScreenHyperlink extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 25, bottom: 10),
         child: Text(
-          content,
+          text,
           style: textStyle,
         ),
       ),
