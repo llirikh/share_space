@@ -49,6 +49,10 @@ class News {
     this.statusCode = statusCode;
   }
 
+  // String _stringToRaw(String string) {
+  //   return "\r$string";
+  // }
+
   Future<void> getNewsBatch() async {
     var url = Uri(
         scheme: "https",
@@ -61,16 +65,17 @@ class News {
     _updateStatusCode(response.statusCode);
 
     if (response.statusCode == 200) {
-      var newsList = jsonDecode(response.body) as List;
+      var responseBody = jsonDecode(response.body) as Map<String, dynamic>;
+      var newsList = responseBody["results"] as List;
       for (var element in newsList) {
         Article article = Article(
           id: element["id"],
           title: element["title"],
           url: element["url"],
-          imageUrl: element["imageUrl"],
-          newsSite: _modifyArticleNewsSite(element["newsSite"]),
+          imageUrl: element["image_url"],
+          newsSite: _modifyArticleNewsSite(element["news_site"]),
           content: _modifyArticleContent(element["summary"]),
-          publishedData: element["publishedAt"]
+          publishedData: element["published_at"]
         );
 
         articles.add(article);
