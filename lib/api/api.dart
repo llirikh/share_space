@@ -53,8 +53,8 @@ class News {
     var url = Uri(
         scheme: "https",
         host: "api.spaceflightnewsapi.net",
-        path: "/v3/articles",
-        queryParameters: {"_limit": "$_limit", "_start": "$_start"}
+        path: "/v4/articles",
+        queryParameters: {"limit": "$_limit", "offset": "$_start"}
     );
 
     var response = await http.get(url, headers: {"Content-Type": "application/json"});
