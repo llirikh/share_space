@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../api/models/article.dart';
-import '../features/article/view/article_screen.dart';
-import '../features/article_navigation/view/article_navigation_screen.dart';
-import '../features/home/view/home_screen.dart';
-import '../features/articles_list//view/articles_list_screen.dart';
-import '../features/settings/view/settings_screen.dart';
+import '../features/article/article.dart';
+import '../features/article_navigation/article_navigation.dart';
+import '../features/home/home.dart';
+import '../features/article_list/article_list.dart';
+import '../features/settings/settings.dart';
 
 part 'router.gr.dart';
 
