@@ -14,11 +14,12 @@ ShareSpace is a free and open-source news application that provides users with t
   - [x] Scrollable
   - [x] Pagination 
   - [x] Cached images
-- [x] Article page with article information
+- [x] Article page with info about the article
   - [x] Scrollable
   - [x] Web-view mode
 - [x] Settings page
   - [x] Dark-mode switcher
+  - [x] Saving the last state of the theme
 - [x] TabBar 
   - [x] Autoscroll to the top when clicked again 
 
