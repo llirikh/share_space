@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:news/features/articles_list/view/widgets/article_list_card.dart';
 
 import '../../../../api/api.dart';
+import '../widgets/widgets.dart';
 
 @RoutePage()
 class ArticleListScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
   void scrollToBegin() {
     widget.controller.animateTo(
         widget.controller.position.minScrollExtent,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut
     );
   }
