@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../api/models/article.dart';
 import '../../../../router/router.dart';
+import '../../../models/article/article.dart';
 
 class ArticleListCard extends StatelessWidget {
   final Article article;

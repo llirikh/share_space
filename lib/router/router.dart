@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../api/models/article.dart';
+import '../models/article/article.dart';
 import '../features/article/article.dart';
 import '../features/article_navigation/article_navigation.dart';
 import '../features/home/home.dart';

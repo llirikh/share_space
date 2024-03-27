@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
-import '../../../../api/api.dart';
-import '../widgets/widgets.dart';
+import 'package:news/repository/article_collection/article_collection.dart';
+import 'package:news/features/article_list/widgets/widgets.dart';
 
 @RoutePage()
 class ArticleListScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class ArticleListScreen extends StatefulWidget {
 }
 
 class _ArticleListScreenState extends State<ArticleListScreen> {
-  late News _news;
+  final _articleCollection = GetIt.instance<BaseArticleCollection>();
   bool _isFirstLoading = true;
   bool _loading = true;
 
@@ -27,7 +28,6 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
     _loading = true;
     _isFirstLoading = true;
     super.initState();
-    _news = News();
     _getNews();
     widget.controller.addListener(_getNews);
   }
@@ -49,7 +49,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
 
   Future<void> _getNews() async {
     if (_isFirstLoading) {
-      await _news.getNewsBatch();
+      await _articleCollection.addArticles();
       setState(() {
         _loading = false;
         _isFirstLoading = false;
@@ -59,8 +59,8 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
         setState(() {
           _loading = true;
         });
-        await _news.getNewsBatch();
-        if (_news.statusCode == 200) {
+        await _articleCollection.addArticles();
+        if (_articleCollection.statusCode == 200) {
           setState(() {
             _loading = false;
           });
@@ -123,12 +123,12 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
           height: 12,
         )),
         SliverList.builder(
-          itemCount: _news.articles.length,
+          itemCount: _articleCollection.articles.length,
           itemBuilder: (context, index) {
             //print("INDEX $index");
             //print(_articles);
             return ArticleListCard(
-              article: _news.articles[index],
+              article: _articleCollection.articles[index],
             );
           },
         )

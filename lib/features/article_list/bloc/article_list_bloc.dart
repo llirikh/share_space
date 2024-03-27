@@ -5,8 +5,8 @@ part 'article_list_state.dart';
 
 class ArticleListBLoc extends Bloc<ArticleListEvent, ArticleListState> {
   ArticleListBLoc() : super(ArticleListInitial()) {
-    on<ArticleListEvent>((event, emit) {
-
+    on<LoadArticleList>((event, emit) {
+      print("Article list is loading...");
     });
 
   }

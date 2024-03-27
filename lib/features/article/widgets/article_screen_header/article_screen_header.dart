@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../../api/models/article.dart';
+
+import 'package:news/models/models.dart';
+
 import 'article_screen_header_delegate.dart';
 
 class ArticleScreenHeader extends StatelessWidget {

@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../api/models/article.dart';
-import '../widgets/widgets.dart';
+import 'package:news/models/models.dart';
+import 'package:news/features/article/widgets/widgets.dart';
 
 @RoutePage()
 class ArticleScreen extends StatelessWidget {

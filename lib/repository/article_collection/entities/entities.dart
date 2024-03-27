@@ -1,0 +1,1 @@
+export 'simple_article_collection/simple_article_collection.dart';
